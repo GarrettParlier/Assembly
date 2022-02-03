@@ -1,0 +1,45 @@
+//Garrett Parlier
+Input		//Takes in user input
+Store A		//First value stored in variable A
+Output
+Input
+Store B		//Second value stored in variable B
+Output
+Input
+Store C		//Third value stored in variable C
+Output
+Load D		//D is our final value || also the start of first loop
+Add A		
+Store D		//store new D value after every addition
+Load B		
+Subt one	//Subtracts from the second value every time its looped through
+Store B
+Skipcond 400 	//When B is 0 the loop will end
+Jump 009	//Jumps to start of loop at line 009
+Load D
+Store A		//A stays our current value being added
+Load zero
+Store D		//D becomes 0 to take in new multiplication
+Load D		
+Add A
+Store D
+Load C
+Subt one 	//subtract from the third value every time its looped through	
+Store C
+Skipcond 400	//When C is 0 the loop will end
+Jump 015	//Jumps to start of loop at line 015
+Load D
+Output
+Load zero	//Replace all values with 0 for easier testing 
+Store A
+Store B
+Store C
+Store D
+HALT
+
+A, dec 0	//First input
+B, dec 0	//Second input
+C, dec 0	//Third input
+D, dec 0	//Final value
+one, dec 1	//Used to keep track of current location
+zero, dec 0	//Used to wipe D clean to multiply second value

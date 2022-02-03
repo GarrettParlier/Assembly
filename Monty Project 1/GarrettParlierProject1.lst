@@ -1,0 +1,65 @@
+     Assembly listing for: GarrettParlierProject1.mas
+                Assembled: Tue Feb 01 19:53:48 EST 2022
+
+         |                          //Garrett Parlier
+000 5000 |         INPUT            //Takes in user input
+001 2025 |         STORE A          //First value stored in variable A
+002 6000 |         OUTPUT            
+003 5000 |         INPUT             
+004 2026 |         STORE B          //Second value stored in variable B
+005 6000 |         OUTPUT            
+006 5000 |         INPUT             
+007 2027 |         STORE C          //Third value stored in variable C
+008 6000 |         OUTPUT            
+009 1028 |         LOAD D           //D is our final value || also the start of first loop
+00A 3025 |         ADD A             
+00B 2028 |         STORE D          //store new D value after every addition
+00C 1026 |         LOAD B            
+00D 4029 |         SUBT one         //Subtracts from the second value every time its looped through
+00E 2026 |         STORE B           
+00F 8400 |         SKIPCOND 400     //When B is 0 the loop will end
+010 9009 |         JUMP 009         //Jumps to start of loop at line 009
+011 1028 |         LOAD D            
+012 2025 |         STORE A          //A stays our current value being added
+013 102A |         LOAD zero         
+014 2028 |         STORE D          //D becomes 0 to take in new multiplication
+015 1028 |         LOAD D            
+016 3025 |         ADD A             
+017 2028 |         STORE D           
+018 1027 |         LOAD C            
+019 4029 |         SUBT one         //subtract from the third value every time its looped through	
+01A 2027 |         STORE C           
+01B 8400 |         SKIPCOND 400     //When C is 0 the loop will end
+01C 9015 |         JUMP 015         //Jumps to start of loop at line 015
+01D 1028 |         LOAD D            
+01E 6000 |         OUTPUT            
+01F 102A |         LOAD zero        //Replace all values with 0 for easier testing 
+020 2025 |         STORE A           
+021 2026 |         STORE B           
+022 2027 |         STORE C           
+023 2028 |         STORE D           
+024 7000 |         HALT              
+         |                          
+025 0000 |  A      DEC 0            //First input
+026 0000 |  B      DEC 0            //Second input
+027 0000 |  C      DEC 0            //Third input
+028 0000 |  D      DEC 0            //Final value
+029 0001 |  one    DEC 1            //Used to keep track of current location
+02A 0000 |  zero   DEC 0            //Used to wipe D clean to multiply second value
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          A      |   025   | 001, 00A, 012, 016, 020
+          B      |   026   | 004, 00C, 00E, 021
+          C      |   027   | 007, 018, 01A, 022
+          D      |   028   | 009, 00B, 011, 014, 015, 017, 
+                 |         | 01D, 023
+          one    |   029   | 00D, 019
+          zero   |   02A   | 013, 01F
+         --------------------------------------------------
+
+
